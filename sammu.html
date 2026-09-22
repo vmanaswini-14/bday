@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Something For You 💌</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Georgia", serif;
+    background: #fff7fa;
+    color: #4a3038;
+    overflow-x: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.page.active {
+    display: flex;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* OPENING */
+
+.opening {
+    flex-direction: column;
+}
+
+.small {
+    font-family: Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: #b77a8c;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(38px, 10vw, 65px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    max-width: 500px;
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    color: #765762;
+    margin-bottom: 35px;
+}
+
+button {
+    border: none;
+    background: #d9829a;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(180, 100, 125, 0.25);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #c96f89;
+}
+
+/* PHOTOS */
+
+.gallery-page {
+    flex-direction: column;
+}
+
+.gallery {
+    width: min(900px, 100%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.photo {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f3dce3;
+    box-shadow: 0 8px 25px rgba(100, 50, 70, 0.12);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.photo img:hover {
+    transform: scale(1.05);
+}
+
+/* MESSAGE */
+
+.message-page {
+    flex-direction: column;
+}
+
+.letter {
+    width: min(650px, 100%);
+    background: #fff;
+    padding: 45px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(80, 40, 60, 0.1);
+    position: relative;
+}
+
+.letter::before {
+    content: "♡";
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 25px;
+    color: #d9829a;
+}
+
+.letter p {
+    font-family: Arial, sans-serif;
+    line-height: 1.9;
+    color: #654c55;
+    margin-top: 20px;
+}
+
+/* FINAL */
+
+.final-page {
+    flex-direction: column;
+}
+
+.final-heart {
+    font-size: 70px;
+    animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+.final-message {
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 25px 0;
+}
+
+/* MOBILE */
+
+@media(max-width: 650px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo {
+        height: 190px;
+    }
+
+    .letter {
+        padding: 35px 22px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- FLOATING HEARTS -->
+
+<div class="heart" style="left:10%; animation-delay:0s;">♡</div>
+<div class="heart" style="left:30%; animation-delay:2s;">♥</div>
+<div class="heart" style="left:55%; animation-delay:4s;">♡</div>
+<div class="heart" style="left:80%; animation-delay:1s;">♥</div>
+
+
+<!-- ================= PAGE 1 ================= -->
+
+<section class="page active opening" id="page1">
+
+    <div class="small">
+        A LITTLE SURPRISE
+    </div>
+
+    <h1>
+        helloooooooo
+        <span style="color:#d9829a;">
+            Sammuuuuuu
+        </span>
+        ♡
+    </h1>
+
+    <p class="subtitle">
+        EDOO CSEE STUDENTT GAA EDOO TRY CHESAAA 😊😭
+    </p>
+
+    <button onclick="nextPage(2)">
+        ikaa modaletuuu 😊💃
+    </button>
+
+</section>
+
+
+<!-- ================= PAGE 2 ================= -->
+
+<section class="page gallery-page" id="page2">
+
+    <div class="small">
+        A FEW OF MY FAVOURITE MOMENTS
+    </div>
+
+    <h1>
+        Just look at you 🥹
+    </h1>
+
+    <div class="gallery">
+
+        <div class="photo">
+            <img src="p1.jpeg" alt="Sam photo 1">
+        </div>
+
+        <div class="photo">
+            <img src="p2.png" alt="Sam photo 2">
+        </div>
+
+        <div class="photo">
+            <img src="p3.png" alt="Sam photo 3">
+        </div>
+
+        <div class="photo">
+            <img src="p4.png" alt="Sam photo 4">
+        </div>
+
+        <div class="photo">
+            <img src="p5.png" alt="Sam photo 5">
+        </div>
+
+        <div class="photo">
+            <img src="p6.png" alt="Sam photo 6">
+        </div>
+
+    </div>
+
+    <button onclick="nextPage(3)">
+        There's more → 💌
+    </button>
+
+</section>
+
+
+<!-- ================= PAGE 3 ================= -->
+
+<section class="page message-page" id="page3">
+
+    <div class="small">
+        SAMMUUU
+    </div>
+
+    <div class="letter">
+
+        <h1 style="font-size:35px;">
+            Oyeeee Samuuuuuu!!!!! ♡
+        </h1>
+
+        <p>
+            soo em chepalii anukuntunan antee 😊
+        </p>
+
+        <p>
+            ediii na resume lo petukodaniki baguntadi ani
+            chestuna okaa projectt lagaa 😊😊😊
+            kawlaii antee nv kudaa petukooo codee pedtaa 😊😊🫠
+        </p>
+
+        <p>
+            IKA matter kii vosteeee
+            HAPPPPYYYYYYYYYY BIRTHDAYYYYYYYYY
+            SAMUUUUUUUUUU !!!!!!!! 💗💗💗😘😘😘🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳
+        </p>
+
+        <p>
+            CHALAAA GAA UNDUUUU
+        </p>
+
+        <p>
+            Konchamm e sarii iyinaa manchii photoss digidamm
+            petadaniki emm levvv 😊😊
+        </p>
+
+    </div>
+
+    <br>
+
+    <button onclick="nextPage(4)">
+        One more thing... 👀
+    </button>
+
+</section>
+
+
+<!-- ================= PAGE 4 / FINAL ================= -->
+
+<section class="page final-page" id="page4">
+
+    <div class="final-heart">
+        ♡
+    </div>
+
+    <div class="small">
+        ONE LAST THING
+    </div>
+
+    <h1>
+        HAPPPPIESSTTTTTTTTTTTT<br>
+        BIRTHDAYYYYYYYY<br>
+        SAMMMUUUUUU
+    </h1>
+
+    <p class="final-message">
+
+        Sammmuuuuu!!!! 
+
+        <br><br>
+
+        Happiestttt birthdayyyy ✨🫶🏻🫶🏻🫂🫂💖💖💖💓💓💓💓💌💌💕💕💞💓💗💗💗💘💝🩵💛🩶🤎🩷💙🤎💜🩶💗🩵🩵
+
+        <br><br>
+
+        Eheheee unnaaa hearts ani petaa
+        tesukooo ....
+
+        <br><br>
+
+        Challaaa gaaa unddd
+
+        <br><br>
+
+        Induloo kudaa spelling mistakes vetakuuuu..
+
+        <br><br>
+
+        Manchiii gaa gadhii tintuuu
+        nextt yearr kudaaa manchigaaa undddd...
+
+        <br><br>
+
+        Manchigaaaaa unddddd
+
+        <br><br>
+
+        Birthday kii kanisamm maata varsakuu
+        kudaa invite cheyaledd nv nannuuu
+        🙂🙂🙂🙂😒
+
+        <br><br>
+
+        Sarleeeee manchigaaaaa picss degiii pettt
+
+        <br><br>
+
+        Tondarii gaa settle iyyii
+        nannuu tripss kii teusskooo poooo 🫠
+
+        <br><br>
+
+        Okayyyyy byeeeeeee
+
+        <br><br>
+
+        Inkoo sariii
+
+        <br><br>
+
+        Happpyyyyy birthdayyyy uuu
+        💗💗💗😘😘😘🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳
+
+    </p>
+
+    <h2>
+        HE MAYY GIVEE U ROSESSS
+        AVII PADAYIPOTAYII
+        BUTT THISSS 😊😊
+    </h2>
+
+</section>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function nextPage(number) {
+
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    document.getElementById("page" + number).classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
